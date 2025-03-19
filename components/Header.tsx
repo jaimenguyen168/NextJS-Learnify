@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BookMarkedIcon, BookOpen } from "lucide-react";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import SearchInput from "@/components/SearchInput";
 
 const Header = () => {
   return (
@@ -22,7 +23,7 @@ const Header = () => {
               </span>
             </Link>
 
-            {/*<SearchInput />*/}
+            <SearchInput />
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
