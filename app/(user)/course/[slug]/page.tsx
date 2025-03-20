@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { urlFor } from "@/sanity/lib/image";
 import EnrollButton from "@/components/EnrollButton";
+import { isEnrolledInCourse } from "@/sanity/lib/students/isEnrolledInCourse";
+import { auth } from "@clerk/nextjs/server";
 
 interface CoursePageProps {
   params: Promise<{
@@ -15,6 +17,7 @@ interface CoursePageProps {
 const CoursePage = async ({ params }: CoursePageProps) => {
   const { slug } = await params;
   const course = await getCourseBySlug(slug);
+  const { userId } = await auth();
 
   if (!course) {
     return (
@@ -24,10 +27,10 @@ const CoursePage = async ({ params }: CoursePageProps) => {
     );
   }
 
-  // const isEnrolled =
-  //     userId && course?._id
-  //         ? await isEnrolledInCourse(userId, course._id)
-  //         : false;
+  const isEnrolled =
+    userId && course?._id
+      ? await isEnrolledInCourse(userId, course._id)
+      : false;
 
   return (
     <div className="min-h-screen bg-background">
@@ -77,7 +80,7 @@ const CoursePage = async ({ params }: CoursePageProps) => {
                       maximumFractionDigits: 2,
                     })}`}
               </div>
-              <EnrollButton courseId={course._id} isEnrolled={false} />
+              <EnrollButton courseId={course._id} isEnrolled={isEnrolled} />
             </div>
           </div>
         </div>
