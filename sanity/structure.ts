@@ -63,7 +63,7 @@ export const structure: StructureResolver = (S) =>
                                 .schemaType("instructor")
                                 .documentId(instructorId),
                             ),
-                          // Option to view instructor's courses
+                          // Option to view instructor's course
                           S.listItem()
                             .title("View Courses")
                             .child(

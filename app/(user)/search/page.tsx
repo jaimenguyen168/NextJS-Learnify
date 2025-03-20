@@ -44,7 +44,7 @@ const SearchPage = async ({
               <CourseCard
                 key={course._id}
                 course={course}
-                href={`/courses/${course.slug}`}
+                href={`/course/${course.slug}`}
               />
             ))}
           </div>
