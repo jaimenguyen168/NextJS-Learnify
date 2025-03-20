@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.12.6",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@sanity/client": "^6.28.3",
     "@sanity/image-url": "1",
@@ -45,7 +46,10 @@
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@clerk/shared",
-      "sharp"
+      "esbuild",
+      "scrollmirror",
+      "sharp",
+      "yarn"
     ]
   }
 }
