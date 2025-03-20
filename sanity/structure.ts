@@ -88,7 +88,7 @@ export const structure: StructureResolver = (S) =>
                       S.list()
                         .title("Student Options")
                         .items([
-                          // Option to edit student details
+                          // Option to edit students details
                           S.listItem()
                             .title("Edit Student Details")
                             .child(
@@ -103,7 +103,7 @@ export const structure: StructureResolver = (S) =>
                               S.documentList()
                                 .title("Student Enrollments")
                                 .filter(
-                                  '_type == "enrollment" && student._ref == $studentId',
+                                  '_type == "enrollment" && students._ref == $studentId',
                                 )
                                 .params({ studentId }),
                             ),
@@ -115,7 +115,7 @@ export const structure: StructureResolver = (S) =>
                                 .title("Completed Lessons")
                                 .schemaType("lessonCompletion")
                                 .filter(
-                                  '_type == "lessonCompletion" && student._ref == $studentId',
+                                  '_type == "lessonCompletion" && students._ref == $studentId',
                                 )
                                 .params({ studentId })
                                 .defaultOrdering([

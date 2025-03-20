@@ -44,9 +44,9 @@ export const enrollmentType = defineType({
   preview: {
     select: {
       courseTitle: "course.title",
-      studentFirstName: "student.firstName",
-      studentLastName: "student.lastName",
-      studentImage: "student.imageUrl",
+      studentFirstName: "students.firstName",
+      studentLastName: "students.lastName",
+      studentImage: "students.imageUrl",
     },
     prepare({ courseTitle, studentFirstName, studentLastName, studentImage }) {
       return {
