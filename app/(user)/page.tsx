@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "@/app/(user)/Hero";
 import { getCourses } from "@/sanity/lib/courses/getCourses";
 import CourseCard from "@/components/CourseCard";
