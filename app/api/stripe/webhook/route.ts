@@ -49,7 +49,7 @@ export async function POST(req: Request) {
       const student = await getStudentByClerkId(userId);
 
       if (!student) {
-        return new NextResponse("Studenent not found", { status: 400 });
+        return new NextResponse("Students not found", { status: 400 });
       }
 
       // Create an enrollment record in Sanity
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
       return new NextResponse(null, { status: 200 });
     }
 
-    return new NextResponse(null, { status: 200 });
+    return new NextResponse(null, { status: 400 });
   } catch (error) {
     console.error("Error in webhook handler:", error);
     return new NextResponse("Webhook handler failed", { status: 500 });
